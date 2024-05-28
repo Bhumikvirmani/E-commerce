@@ -35,7 +35,7 @@ const ProductDisplay = (props) => {
                 <div className='productdisplay-right-prices-new'>${product.new_price}</div>
             </div>
             <div className='productdisplay-right-description'>
-                a women jacket and alll fucked up
+                {product.description}
             </div>
             <div className='productdisplay-righ-size'>
                 <h1>Select Size</h1>

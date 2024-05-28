@@ -8,7 +8,8 @@ const AddProduct = () => {
     image:"",
     category:"Dog",
     new_price:"",
-    old_price:""
+    old_price:"",
+    description: ""
   })
   const imageHandler = (e)=>{
     setImage(e.target.files[0])
@@ -75,6 +76,10 @@ const AddProduct = () => {
           <img className='nav-profile'src={image?URL.createObjectURL(image):cart} alt=''/>
         </label>
         <input onChange={imageHandler}type='file' name='image' id='file-input' hidden/>
+      </div>
+      <div className='addproduct-itemfield'>
+        <p>Product Description</p>
+        <textarea value={productDetails.description} onChange={changeHandler} name='description' placeholder='Type here'/>
       </div>
       <button onClick={()=>{ Add_Product()}} className='addproduct-btn'>Add</button>
     </div>

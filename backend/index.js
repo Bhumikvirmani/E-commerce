@@ -101,7 +101,7 @@ const Product = mongoose.model("Product",{
     },
     description:{
         type: String,
-        require: true,
+        required: true,
     },
     date:{
         type: Date,

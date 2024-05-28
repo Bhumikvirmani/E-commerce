@@ -1,10 +1,16 @@
-import React, { useContext } from 'react'
+import React, {useState, useContext } from 'react'
 import '../ProductDisplay/ProductDisplay.css'
 import star from '../Assests/star.png'
 import dullStar from '../Assests/dullStar.png'
 import { ShowContext } from '../../Context/ShopContext'
 const ProductDisplay = (props) => {
     const {product}= props;
+
+    const [size, setSize] = useState('');
+
+    const changeHandler = (event) => {
+        setSize(event.target.value);
+    };
 
     const{addToCart} = useContext(ShowContext);
   return (
@@ -39,12 +45,13 @@ const ProductDisplay = (props) => {
             </div>
             <div className='productdisplay-righ-size'>
                 <h1>Select Size</h1>
-                <div className='productdisplay-righ-size'>
-                    <div>Small</div>
-                    <div>Medium</div>
-                    <div>Large</div>
-                    <div>Extra large</div>
-                </div>
+                <select name='size' onChange={changeHandler}>
+                    <option value="">Select a size</option>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                    <option value="Extra large">Extra large</option>
+                </select>
             </div>
             <button onClick={()=>{addToCart(product.id)}}>Add to cart</button>
             <p className='productdisplay-right-categoty'><span>category:</span>women jacket</p>

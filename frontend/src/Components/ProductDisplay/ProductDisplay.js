@@ -54,7 +54,7 @@ const ProductDisplay = (props) => {
                 </select>
             </div>
             <button onClick={()=>{addToCart(product.id)}}>Add to cart</button>
-            <p className='productdisplay-right-categoty'><span>category:</span>women jacket</p>
+            {/* <p className='productdisplay-right-categoty'><span>category:</span>women jacket</p> */}
         </div>
     </div>
   )

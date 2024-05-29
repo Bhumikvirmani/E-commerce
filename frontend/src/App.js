@@ -10,6 +10,7 @@ import dog_banner from './Components/Assests/dogbanner1.png';
 import rabbit_banner from './Components/Assests/rabbit_banner.jpg';
 import cat_food from './Components/Assests/cat_food.avif';
 import Product from './Pages/Product';
+import NewCollections from './Components/NewCollections/NewCollections';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/product' element={<Product/>}>
           <Route path=':productId' element={<Product/>}/>
         </Route>
+        <Route path="/latest-products" component={NewCollections} />
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<LoginSignup/>}/>
       </Routes>

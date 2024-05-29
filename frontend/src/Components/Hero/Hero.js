@@ -2,6 +2,7 @@ import React from 'react'
 import './Hero.css'
 import hand from '../Assests/Handwave.jpg'
 import Doglogo from '../Assests/Doglogo.jpg'
+import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <div className='hero'>
@@ -15,10 +16,12 @@ const Hero = () => {
                 <p>Products</p>
                 <p>Grab it Now</p>
             </div>
-            <div className='hero-latest-btn'>
+            <Link to="/latest-products">
+              <div className='hero-latest-btn'>
                 <div>Latest Products</div>
-                {/* <img className='womenok' src={womenok}alt=''/> */}
-            </div>
+              </div>
+            </Link>
+
         </div> 
         <div className='hero-right'>
         <img className='womenok' src={Doglogo}alt=''/>  

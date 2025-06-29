@@ -1,28 +1,18 @@
 const port =4000;
-const express = require("express");
+import express from "express";
 const app= express();
-const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
-const multer  = require("multer");
-const path = require("path")
-const cors =require("cors");
-const { type } = require("os");
-
-
-
+import jwt from "jsonwebtoken";
+import mongoose from "mongoose";
+import multer from "multer";
+import path from "path";
+import cors from "cors";
+import { type } from "os";
+import dotenv from "dotenv";
+import connectDB from "./utils/connectDB.js";
+dotenv.config({});
 
 app.use(express.json())
 app.use(cors())
-
-const DB= `mongodb+srv://PetDoc:PetDoc100@cluster0.3ixtt9u.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=Cluster0`
-
-mongoose.connect(DB,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(()=>{
-    console.log('connection successful');
-}).catch((err)=>console.log("no connection"));
-
 const midleware = (req,res,next)=>{
     console.log("middleware is here");
     next();
@@ -437,6 +427,7 @@ app.get('/allDoctorDetails/:id', async (req, res) => {
 
 // const PORT=2000;
 app.listen(port,()=>{
+    connectDB();
     console.log("server side is running");
 }); 
 

@@ -205,7 +205,7 @@ app.post('/getcart',fetchPatient,async(req,res)=>{
 app.get('/newcollection',async (req,res)=>{
     let products = await Product.find({});
     let newcollection = products.slice(1).slice(-8);
-    console.log("new collection fetched");
+    console.log("new collection fetchedddr : ",newcollection);
     res.send(newcollection);
 })
 
@@ -213,7 +213,7 @@ app.get('/newcollection',async (req,res)=>{
  app.get('/popularwomen', async(req,res)=>{
     let products = await Product.find({category:"Cat"});
     let popular_in_women = products.slice(0,4);
-    console.log("popular in women fetched");
+    console.log("popular in women fetched : ",popular_in_women);
     res.send(popular_in_women);
  })
 //userSchema
@@ -439,3 +439,6 @@ app.get('/allDoctorDetails/:id', async (req, res) => {
 app.listen(port,()=>{
     console.log("server side is running");
 }); 
+
+
+
